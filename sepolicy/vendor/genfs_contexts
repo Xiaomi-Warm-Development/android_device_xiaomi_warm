@@ -8,6 +8,9 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qco
 # Charger
 genfscon sysfs /class/power_supply/battery/constant_charge_current                                       u:object_r:vendor_sysfs_power_supply:s0
 
+# Display
+genfscon sysfs /devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param u:object_r:vendor_sysfs_displayfeature:s0
+
 # FastCharge
 genfscon sysfs /class/qcom-battery/sport_mode                                                            u:object_r:sysfs_fastcharge:s0
 

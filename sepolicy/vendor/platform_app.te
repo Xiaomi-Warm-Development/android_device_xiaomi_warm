@@ -29,3 +29,4 @@ binder_call(platform_app, vendor_hal_camerapostproc_xiaomi)
 
 allow platform_app vendor_displayfeature_prop:file read;
 
+allow platform_app vendor_file:file { read open getattr map execute watch };

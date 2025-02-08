@@ -216,12 +216,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+$(call soong_config_set,xiaomi_hardware_biometrics,use_new_impl,true)
+
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.common.thread.vendor \
-    android.hardware.biometrics.common.util.vendor \
-    android.hardware.biometrics.common.thread \
-    android.hardware.biometrics.common.util \
-    android.hardware.biometrics.fingerprint-V3-ndk.vendor
+    android.hardware.biometrics.fingerprint-service.xiaomi
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -297,6 +295,7 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
+    init.fingerprint.rc \
     init.qcom.rc \
     init.peridot.rc \
     init.qti.kernel.rc \
