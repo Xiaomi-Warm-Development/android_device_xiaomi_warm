@@ -17,3 +17,6 @@ com.fingerprints.extension::IFingerprintSensorTest                              
 com.fingerprints.extension::IFingerprintCalibration                                  u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 com.fingerprints.extension::IFingerprintOptical                                      u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 com.fingerprints.fpc.extension::IFpcExtension                                        u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+
+# Touchfeature
+ vendor.xiaomi.hw.touchfeature::ITouchFeature           u:object_r:hal_touchfeature_xiaomi_hwservice:s0
