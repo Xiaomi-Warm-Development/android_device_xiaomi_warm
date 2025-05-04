@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from peridot OS2.0.100.0 VNPMIXM
+# All unpinned blobs below are extracted from peridot OS2.0.102.0 VNPMIXM
 
 abl.img;AB
 aop.img;AB

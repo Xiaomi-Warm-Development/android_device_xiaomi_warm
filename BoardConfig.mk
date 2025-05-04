@@ -220,7 +220,7 @@ SOONG_CONFIG_XIAOMI_SENSORS += UDFPS_PATH
 SOONG_CONFIG_XIAOMI_SENSORS_UDFPS_PATH := /sys/class/touch/touch_dev/fod_press_status
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2025-02-01
+VENDOR_SECURITY_PATCH := 2025-03-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
