@@ -243,6 +243,12 @@
                 android:value="true" />
         </service>
 
+        <!-- Touch Sampling AppSelector -->
+        <activity
+            android:name=".touchsampling.TouchSamplingPerAppConfigActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SubSettingsBase" />
+
 	<!-- TileHandler activity -->
         <activity
             android:name=".TileHandlerActivity"
