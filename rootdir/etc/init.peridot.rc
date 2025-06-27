@@ -29,6 +29,10 @@ on boot
     chown system system /sys/class/power_supply/battery/constant_charge_current
     chmod 0664 /sys/class/power_supply/battery/constant_charge_current
  
+    # Allow system to modify input_suspend
+    chown system system /sys/class/qcom-battery/input_suspend
+    chmod 0664 /sys/class/qcom-battery/input_suspend
+
 # Migrate tasks again in case kernel threads are created during boot
 on property:sys.boot_completed=1
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
