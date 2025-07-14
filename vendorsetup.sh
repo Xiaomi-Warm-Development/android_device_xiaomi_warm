@@ -14,7 +14,7 @@ cd hardware/qcom-caf/sm8650/display && git fetch https://github.com/xiaomi-perid
 
 git clone -b vic-sm8650 https://github.com/xiaomi-peridot/hardware_qcom_media hardware/qcom-caf/sm8650/media --depth=1
 
-cd device/qcom/sepolicy_vndr/sm8650 && git fetch https://github.com/xiaomi-peridot/device_qcom_sepolicy_vndr vic-sm8650 && git reset --hard FETCH_HEAD && croot
+cd device/qcom/sepolicy_vndr/sm8650 && git fetch https://github.com/peridot-hyperos-2/android_device_qcom_sepolicy_vndr lineage-22.2-caf-sm8650 && git reset --hard FETCH_HEAD && croot
 
 cd hardware/qcom-caf/common && git fetch https://github.com/project-dynamic/android_hardware_qcom-caf_common vic && git reset --hard FETCH_HEAD && croot
 
