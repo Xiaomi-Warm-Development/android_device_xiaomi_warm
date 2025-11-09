@@ -125,17 +125,14 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common-V1-ndk.vendor \
-    android.hardware.camera.device-V2-ndk.vendor \
-    android.hardware.camera.metadata-V2-ndk.vendor \
-    android.hardware.camera.provider-V2-ndk.vendor \
-    android.hardware.camera.provider@2.4-external \
-    android.hardware.camera.provider@2.4-legacy \
-    android.hardware.camera.provider@2.7.vendor \
+    android.hardware.camera.device-V1-ndk.vendor \
+    android.hardware.camera.metadata-V1-ndk.vendor \
+    android.hardware.camera.provider-V1-ndk.vendor \
+    android.hardware.camera.provider@1.4-external \
+    android.hardware.camera.provider@1.4-legacy \
+    android.hardware.camera.provider@1.7.vendor \
     android.hardware.camera.common@1.0.vendor \
-    vendor.qti.hardware.camera.aon-V1-ndk.vendor \
-    vendor.qti.hardware.camera.aon@1.3.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.offlinecamera-V1-ndk.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_PACKAGES += \
@@ -306,7 +303,6 @@ PRODUCT_PACKAGES += \
     android.hardware.security.sharedsecret-V1-ndk.vendor \
     android.system.keystore2-V1-ndk.vendor \
     lib_android_keymaster_keymint_utils.vendor \
-    libcppbor_external.vendor \
     libgatekeeper.vendor \
     libsoft_attestation_cert.vendor \
     libkeymaster_messages.vendor \
@@ -364,14 +360,11 @@ endif
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2.vendor \
+    android.hardware.media.c2@1.0.vendor \
     libavservices_minijail \
     libavservices_minijail_vendor \
     libcodec2_hidl@1.0.vendor \
-    libcodec2_hidl@1.1.vendor \
-    libcodec2_hidl@1.2.vendor \
     libcodec2_hidl_shim \
-    libcodec2_soft_common.vendor \
     libcodec2_shim \
     libcodec2_vndk.vendor
 
@@ -585,12 +578,7 @@ PRODUCT_COPY_FILES += \
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
-    prebuilts/vndk/v34/arm64/arch-arm64-armv8-a/shared/vndk-core/libaudioroute.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaudioroute-v34.so \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libui-v33.so
-
-# Weaver
-PRODUCT_PACKAGES += \
-    android.hardware.weaver-V2-ndk.vendor
 
 # WiFi
 PRODUCT_PACKAGES += \
