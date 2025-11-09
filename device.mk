@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
     libexif.vendor \
     libutilscallstack.vendor \
     libyuv.vendor \
-    libwrapper_dlengine_shim \
     libprocessgroup_shim
 
 PRODUCT_COPY_FILES += \
