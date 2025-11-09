@@ -73,7 +73,6 @@ PRODUCT_PACKAGES += \
     libagm_pcm_plugin \
     libagmclient \
     libaudiochargerlistener \
-    libaudioroute.vendor \
     libbatterylistener \
     libpalclient \
     libfmpal \
