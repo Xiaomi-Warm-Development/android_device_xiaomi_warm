@@ -89,3 +89,10 @@ persist.vendor.debug.collision.dfx=true
 
 # Thermal
 persist.vendor.tracking.dfs=true
+
+# SKU
+bluetooth.device.default_name=POCO C75 5G
+ro.product.odm.marketname=POCO C75 5G
+ro.product.odm.model=24116PCC1I
+ro.product.odm.name=warm_global
+
