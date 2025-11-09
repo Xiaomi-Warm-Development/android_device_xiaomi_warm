@@ -1,7 +1,0 @@
-allow {
-    mediaprovider_app
-    permissioncontroller_app
-    platform_app
-    priv_app
-    system_app
-} zygote:unix_stream_socket getopt;

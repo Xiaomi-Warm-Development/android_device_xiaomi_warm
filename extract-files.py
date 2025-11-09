@@ -22,7 +22,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/xiaomi/peridot',
+    'device/xiaomi/warm',
     'hardware/qcom-caf/sm8650',
     'hardware/xiaomi',
     'vendor/qcom/opensource/commonsys-intf/display',
@@ -30,29 +30,10 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
-    ('odm/etc/camera/enhance_motiontuning.xml',
-     'odm/etc/camera/motiontuning.xml',
-     'odm/etc/camera/night_motiontuning.xml'): blob_fixup()
-        .regex_replace('xml=version', 'xml version'),
-
-    ('odm/lib64/hw/camera.qcom.so',
-     'odm/lib64/hw/com.qti.chi.override.so',
-     'odm/lib64/hw/camera.xiaomi.so',
-     'odm/lib64/libcamxcommonutils.so',
-     'odm/lib64/libmialgoengine.so',
-     'odm/lib64/libchifeature2.so'): blob_fixup()
-        .add_needed('libprocessgroup_shim.so'),
-
-    'odm/lib64/hw/camera.xiaomi.so': blob_fixup()
-        .replace_needed('libui.so', 'libui-v33.so'),
-
-    'odm/lib64/libwrapper_dlengine.so': blob_fixup()
-        .add_needed('libwrapper_dlengine_shim.so'),
-
-    ('odm/lib64/libaudioroute_ext.so',
-     'vendor/lib64/libar-pal.so',
-     'vendor/lib64/libagm.so'): blob_fixup()
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),  
+    ('vendor/lib64/hw/camera.qcom.so',
+     'vendor/lib64/hw/com.qti.chi.override.so',
+     'vendor/lib64/libmialgoengine.so'): blob_fixup()
+        .add_needed('libprocessgroup_shim.so'), 
 
     'system_ext/bin/wfdservice64': blob_fixup()
         .add_needed('libwfdservice_shim.so'),
@@ -68,30 +49,12 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudioclient_shim.so'),    
 
-    'vendor/bin/init.qcom.usb.sh': blob_fixup()
-        .regex_replace('ro.product.marketname', 'ro.product.odm.marketname'),
-
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
         .add_needed('libcodec2_shim.so'),
 
-    'vendor/bin/hw/vendor.dolby.media.c2@1.0-service': blob_fixup()
-        .add_needed('libcodec2_hidl_shim.so')
-        .add_needed('libstagefright_foundation-v33.so'),
-
-    'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service': blob_fixup()
-        .add_needed('libstagefright_foundation-v33.so'),
-
-    'vendor/lib64/hw/audio.primary.pineapple.so': blob_fixup()
+    'vendor/lib64/hw/audio.primary.pitti.so': blob_fixup()
         .add_needed('libstagefright_foundation-v33.so')
         .add_needed('libaudioroute-v34.so'),
-
-    ('vendor/lib64/soundfx/libdlbvol.so',
-     'vendor/lib64/soundfx/libhwdap.so',
-     'vendor/lib64/soundfx/libswspatializer.so',
-     'vendor/lib64/libcodec2_soft_ac4dec.so',
-     'vendor/lib64/libcodec2_soft_ddpdec.so',
-     'vendor/lib64/libswspatializer_ext.so'): blob_fixup()
-        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),    
 
     ('vendor/lib64/libqcrilNr.so', 
      'vendor/lib64/libril-db.so'): blob_fixup()
@@ -110,8 +73,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbinder_shim.so'),
 
     ('vendor/etc/media_codecs.xml',
-     'vendor/etc/media_codecs_cliffs_v0.xml',
-     'vendor/etc/media_codecs_performance_cliffs_v0.xml'): blob_fixup()
+     'vendor/etc/media_codecs_pitti.xml',
+     'vendor/etc/media_codecs_performance_pitti.xml'): blob_fixup()
         .regex_replace(
             '.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n',
             ''
@@ -125,7 +88,7 @@ blob_fixups: blob_fixups_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'peridot',
+    'warm',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

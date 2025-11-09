@@ -22,9 +22,6 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 # Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
-# Inherit from the MiuiCamera setup
-$(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
-
 # Call the BCR setup
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
@@ -64,7 +61,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audioadsprpcd \
     audio.primary.default \
-    audio.primary.pineapple \
+    audio.primary.pitti \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -89,11 +86,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.pal@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_overlay_static.xml:$(TARGET_COPY_OUT_ODM)/etc/audio/sku_cliffs/mixer_paths_overlay_static.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_effects.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_effects.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf 
 
 PRODUCT_COPY_FILES += \
@@ -170,17 +164,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
-# Contexthub
-PRODUCT_PACKAGES += \
-    android.hardware.contexthub-V2-ndk.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.context_hub.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.context_hub.xml
-
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Display
 PRODUCT_PACKAGES += \
     vendor.display.config@1.11.vendor \
@@ -199,13 +182,10 @@ PRODUCT_PACKAGES += \
     init.qti.display_boot.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946545580055171.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946545580055171.xml \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947033261136259.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947033261136259.xml \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947195234848131.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947195234848131.xml
-
-# Dolby
-PRODUCT_PACKAGES += \
-    XiaomiDolby
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946383195604353.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946383195604353.xml \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946949772992129.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946949772992129.xml \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947205983955585.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947205983955585.xml \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947217459655297.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947217459655297.xml
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -221,16 +201,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-$(call soong_config_set,XIAOMI_BIOMETRICS_FINGERPRINT,USE_NEW_IMPL,true)
-
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi \
-    libudfpshandler
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -274,21 +244,11 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libbinder_shim.vendor
 
-# Init
-$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_peridot)
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     IPACM_Filter_cfg.xml
-
-# IR
-PRODUCT_PACKAGES += \
-    android.hardware.ir-service.example
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 
 # Identity
 PRODUCT_PACKAGES += \
@@ -297,7 +257,8 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
-    fstab.qcom
+    fstab.default \
+    fstab.emmc
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
@@ -308,19 +269,19 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    init.fingerprint.rc \
     init.qcom.rc \
-    init.peridot.rc \
+    init.warm.rc \
     init.qti.kernel.rc \
     init.recovery.qcom.rc \
     init.target.rc
 
 PRODUCT_PACKAGES += \
-    ueventd-odm.rc \
     ueventd.qcom.rc
 
+# Fstab first_stage_ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
 # Keymint
 PRODUCT_PACKAGES += \
@@ -416,7 +377,7 @@ PRODUCT_PACKAGES += \
     android.hardware.media.bufferpool2-V1-ndk.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_profiles_cliffs_v0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_cliffs_v0.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_pitti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_pitti.xml \
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -427,7 +388,6 @@ PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint \
-    vendor_modem_firmware_mountpoint \
     vendor_vm-system_mountpoint
 
 # Network
@@ -438,46 +398,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
-# NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc-V1-ndk.vendor \
-    android.hardware.nfc@1.2.vendor \
-    android.hardware.secure_element-V1-ndk.vendor \
-    android.hardware.secure_element@1.2.vendor
-
-PRODUCT_PACKAGES += \
-    nqnfcinfo \
-    vendor.nxp.nxpese@1.0.vendor \
-    vendor.nxp.nxpnfc_aidl-V1-ndk.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.se.omapi.ese.xml \
-    frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.se.omapi.uicc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.nxp.mifare.xml
-
 # Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayPeridot \
-    CarrierConfigOverlayPeridot \
-    FrameworkOverlayPeridot \
-    LineageSDKOverlayPeridot \
-    NfcOverlayPeridot \
-    SecureElementOverlayPeridot \
-    SettingsOverlayPeridot \
-    SettingsProviderOverlayPeridotPOCO \
-    SettingsProviderOverlayPeridotRedmi \
-    SystemUIOverlayPeridot \
-    TelephonyOverlayPeridot \
-    FastChargePeridot \
-    WifiOverlayPeridot \
-    WifiOverlayPeridotPOCO \
-    WifiOverlayPeridotRedmi
+    ApertureOverlayWarm \
+    CarrierConfigOverlayWarm \
+    FrameworkOverlayWarm \
+    LineageSDKOverlayWarm \
+    SecureElementOverlayWarm \
+    SettingsOverlayWarm \
+    SettingsProviderOverlayWarmPOCO \
+    SettingsProviderOverlayWarmRedmi \
+    SystemUIOverlayWarm \
+    TelephonyOverlayWarm \
+    WifiOverlayWarm \
+    WifiOverlayWarmPOCO \
+    WifiOverlayWarmRedmi
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -487,7 +422,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/power/config/pineapple/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+    vendor/qcom/opensource/power/config/pitti/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Privapp permissions
 PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=log
@@ -508,12 +443,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.qspa-service
 
-# SKU
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/props/odm_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_CN.prop \
-    $(LOCAL_PATH)/props/odm_GL.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_GL.prop \
-    $(LOCAL_PATH)/props/odm_IN.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_IN.prop
-
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio-V2-ndk.vendor \
@@ -532,12 +461,7 @@ PRODUCT_PACKAGES += \
     librmnetctl
 
 PRODUCT_PACKAGES += \
-    rfs_msm_mpss_readonly_mbnconfig_symlink \
-    rfs_msm_mpss_readonly_modem_firmware_symlink
-
-# RemovePackages
-PRODUCT_PACKAGES += \
-    RemovePackages
+    rfs_msm_mpss_readonly_firmware_mnt_symlink
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -563,7 +487,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.dynamic.head_tracker.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.dynamic.head_tracker.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
@@ -695,7 +618,7 @@ PRODUCT_PACKAGES += \
     firmware_WCNSS_qcom_cfg.ini_symlink
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6750/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/adrastea/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
@@ -720,4 +643,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/peridot/peridot-vendor.mk)
+$(call inherit-product, vendor/xiaomi/warm/warm-vendor.mk)

@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_peridot.mk
+    $(LOCAL_DIR)/lineage_warm.mk
 
 COMMON_LUNCH_CHOICES := \
-    infinity_peridot-eng \
-    infinity_peridot-userdebug \
-    infinity_peridot-user
+    lineage_warm-eng \
+    lineage_warm-userdebug \
+    lineage_warm-user
