@@ -76,7 +76,7 @@
         <library name="audiosphere" path="libasphere.so"/>
         <library name="quasar" path="libquasar.so"/>
         <!--MISOUND START-->
-        <library name="misoundfx" path="libmisoundfx.so"/>
+        <library name="misoundfx" path="libmisoundfx_ext.so"/>
         <!--MISOUND END-->
     </libraries>
     <effects>
