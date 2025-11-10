@@ -1,3 +1,10 @@
+<!--
+    Input:
+        device/xiaomi/mivendor/manifest_cliffs.xml
+        vendor/xiaomi/proprietary/slm/port/src/manifest.xml
+        vendor/xiaomi/proprietary/miwillp/port/src/manifest.xml
+        vendor/xiaomi/proprietary/minet/port/src/manifest.xml
+-->
 <manifest version="7.0" type="device" target-level="8">
     <hal format="hidl">
         <name>android.hardware.audio</name>
@@ -93,5 +100,20 @@
         <name>vendor.qti.ims.factory</name>
         <transport>hwbinder</transport>
         <fqname>@1.1::IImsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.sla.service</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISlaService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hidl.minet</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IMiNetService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hidl.miwill</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IMiwillService/default</fqname>
     </hal>
 </manifest>
