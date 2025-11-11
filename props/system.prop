@@ -1,65 +1,12 @@
-# About phone
-ro.infinity.soc=Snapdragon 8s Gen 3
-ro.infinity.battery=5000 mah
-ro.infinity.display=1220 x 2712, 120 Hz
-ro.infinity.camera=50/8MP & 20MP
-
 # Camera
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 ro.com.google.lens.oem_camera_package=com.android.camera
-ro.hardware.camera=xiaomi
 ro.miui.notch=1
-ro.product.mod_device=peridot_global
-ro.camerax.extensions.enabled=true
+ro.product.mod_device=warm_in_global
 
 # Media
-media.settings.xml=/vendor/etc/media_profiles_cliffs_v0.xml
+media.settings.xml=/vendor/etc/media_profiles_pitti.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
-
-# IMS
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-
-# LMK
-ro.config.low_ram=false
-
-# Logging
-persist.vendor.camera.logInfoMask=false
-
-# Radio Options
-persist.radio.volte.dan_support=true
-persist.radio.rat_on=combine
-persist.radio.data_ltd_sys_ind=1
-persist.radio.data_con_rprt=1
-persist.radio.calls.on.ims=1
-persist.radio.VT_ENABLE=1
-
-# Other Options
-persist.sys.cust.lte_config=true
-persist.rcs.supported=1
-
-# Feature flags
-persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
-
-# Radio VoNR Calling
-persist.radio.is_vonr_enabled_0=true
-persist.radio.is_vonr_enabled_1=true
-persist.vendor.vonr_setting_support=1
-
-# Ram
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8
 
 # Camera
 vendor.camera.aux.packagelist=org.lineageos.aperture,com.android.camera,com.google.camera,com.snapchat.android
-
-# Disable default frame rate limit for games
-debug.graphics.game_default_frame_rate.disabled=1
