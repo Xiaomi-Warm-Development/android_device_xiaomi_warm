@@ -1,6 +1,10 @@
-# Media
-media.settings.xml=/vendor/etc/media_profiles_pitti.xml
-media.stagefright.thumbnail.prefer_hw_codecs=true
+# Device
+ro.product.mod_device=warm_in_global
 
-# Camera
-vendor.camera.aux.packagelist=org.lineageos.aperture,com.android.camera,com.google.camera,com.snapchat.android
+# QTI
+ro.vendor.qti.va_aosp.support=1
+
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer-fps=60
+media.settings.xml=/vendor/etc/media_profiles_pitti.xml
