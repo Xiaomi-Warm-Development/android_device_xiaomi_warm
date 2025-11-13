@@ -93,8 +93,6 @@ on fs
     mount vfat /dev/block/bootdevice/by-name/logfs /dev/logfs noatime umask=006,uid=1000,gid=1000
 
 on late-fs
-    wait_for_prop hwservicemanager.ready true
-    #exec_start wait_for_keymaster
     mount_all --late
 
 on post-fs-data
