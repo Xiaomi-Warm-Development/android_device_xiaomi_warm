@@ -396,6 +396,7 @@ PRODUCT_PACKAGES += \
     LineageSDKOverlayWarm \
     SecureElementOverlayWarm \
     SettingsOverlayWarm \
+    FastChargePeridot \
     SettingsProviderOverlayWarmPOCO \
     SettingsProviderOverlayWarmRedmi \
     SystemUIOverlayWarm \
