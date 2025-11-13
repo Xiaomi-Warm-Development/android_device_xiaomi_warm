@@ -1801,8 +1801,23 @@ vendor/lib64/libmm-hdcpmgr.so
 # IR
 odm/lib64/hw/consumerir.qcom.so
 
+# Init
+vendor/bin/init.class_main.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.qcom.early_boot.sh
+vendor/bin/init.qcom.post_boot.sh
+vendor/bin/init.qcom.sh
+vendor/etc/init/hw/init.qcom.rc
+
 # Kernel
+vendor/bin/init.kernel.post_boot-pitti.sh
+vendor/bin/init.kernel.post_boot-pitti_4_0.sh
+vendor/bin/init.kernel.post_boot-pitti_4_1.sh
+vendor/bin/init.kernel.post_boot-pitti_default_6_2.sh
+vendor/bin/init.kernel.post_boot.sh
+vendor/bin/init.qti.kernel.sh
 vendor/bin/init.qti.write.sh
+vendor/etc/init/hw/init.qti.kernel.rc
 vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/vendor_modprobe.sh
 vendor/lib64/libsoc_helper.so

@@ -255,17 +255,7 @@ PRODUCT_PACKAGES += \
     fstab.emmc
 
 PRODUCT_PACKAGES += \
-    init.class_main.sh \
-    init.kernel.post_boot.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sh \
-    init.qti.media.sh
-
-PRODUCT_PACKAGES += \
-    init.qcom.rc \
     init.warm.rc \
-    init.qti.kernel.rc \
     init.recovery.qcom.rc \
     init.target.rc
 
