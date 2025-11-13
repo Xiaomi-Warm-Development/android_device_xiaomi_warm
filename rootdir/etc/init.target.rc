@@ -243,10 +243,6 @@ service vendor.per_proxy /vendor/bin/pm-proxy
 #    group system wakelock
 #    disabled
 
-service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
-    class core
-    oneshot
-
 #CIT for 9434 default prop for stable userroot
 on property:ro.debuggable=1 && property:sys.bootstat.first_boot_completed=0
     setprop persist.vendor.cnss_diag.enable true
