@@ -42,10 +42,3 @@ mkdir {
     dir: "firmware_mnt",
     vendor: true,
 }
-
-prebuilt_hidl_interfaces {
-    name: "hidl_bgservice_interface",
-    interfaces: [
-        "vendor.xiaomi.hardware.bgservice@1.0::IBGService",
-    ],
-}
