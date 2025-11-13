@@ -1,39 +1,3 @@
-sh_binary {
-    name: "init.class_main.sh",
-    src: "bin/init.class_main.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.kernel.post_boot.sh",
-    src: "bin/init.kernel.post_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.early_boot.sh",
-    src: "bin/init.qcom.early_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.post_boot.sh",
-    src: "bin/init.qcom.post_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.sh",
-    src: "bin/init.qcom.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.media.sh",
-    src: "bin/init.qti.media.sh",
-    vendor: true,
-}
-
 prebuilt_etc {
     name: "charger_fw_fstab.qti",
     src: "etc/charger_fw_fstab.qti",
@@ -49,20 +13,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "fstab.emmc",
     src: "etc/fstab.emmc",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.qcom.rc",
-    src: "etc/init.qcom.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.qti.kernel.rc",
-    src: "etc/init.qti.kernel.rc",
-    sub_dir: "init/hw",
     vendor: true,
 }
 
