@@ -1,4 +1,6 @@
 # Audio
+ro.vendor.audio.karaoke.enable=true
+ro.miui.audio.karaoke.suppot.lowlatency=true
 ro.vendor.audio.camera.loopback.support=false
 
 # FW Detect
