@@ -1,77 +1,14 @@
-sh_binary {
-    name: "init.class_main.sh",
-    src: "bin/init.class_main.sh",
-    vendor: true,
-}
 
-sh_binary {
-    name: "init.kernel.post_boot.sh",
-    src: "bin/init.kernel.post_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.early_boot.sh",
-    src: "bin/init.qcom.early_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.post_boot.sh",
-    src: "bin/init.qcom.post_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.sh",
-    src: "bin/init.qcom.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.media.sh",
-    src: "bin/init.qti.media.sh",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "charger_fw_fstab.qti",
-    src: "etc/charger_fw_fstab.qti",
-    vendor: true,
-}
+//
+// Copyright (C) 2022 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
 
 prebuilt_etc {
     name: "fstab.qcom",
     src: "etc/fstab.qcom",
     vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.fingerprint.rc",
-    src: "etc/init.fingerprint.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.qcom.rc",
-    src: "etc/init.qcom.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.qti.kernel.rc",
-    src: "etc/init.qti.kernel.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.peridot.rc",
-    src: "etc/init.peridot.rc",
-    sub_dir: "init",
-    vendor: true,
+    vendor_ramdisk_available: true,
 }
 
 prebuilt_etc {
@@ -89,10 +26,10 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "ueventd-odm.rc",
-    filename: "ueventd.rc",
-    src: "etc/ueventd-odm.rc",
-    device_specific: true,
+    name: "init.xiaomi.rc",
+    src: "etc/init.xiaomi.rc",
+    sub_dir: "init/hw",
+    vendor: true,
 }
 
 prebuilt_etc {
