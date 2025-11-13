@@ -1318,6 +1318,7 @@ odm/etc/charger/BAA_config_peridot.json
 vendor/bin/batterysecret
 vendor/etc/charger_diag.cfg
 vendor/etc/init/hw/init.batterysecret.rc
+vendor/etc/charger_fw_fstab.qti
 
 # Computer vision
 vendor/etc/eva/facedetection/bias.dat
