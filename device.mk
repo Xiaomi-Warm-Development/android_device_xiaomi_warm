@@ -248,18 +248,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.identity-V5-ndk.vendor
 
-# Rootdir
+# Init
 PRODUCT_PACKAGES += \
-    fstab.default \
-    fstab.emmc \
+    charger_fw_fstab.qti \
+    fstab.qcom
+
+PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.kernel.post_boot.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sh \
+    init.qti.media.sh
+
+PRODUCT_PACKAGES += \
+    init.fingerprint.rc \
+    init.qcom.rc \
+    init.peridot.rc \
+    init.qti.kernel.rc \
     init.recovery.qcom.rc \
-    init.target.rc \
+    init.target.rc
+
+PRODUCT_PACKAGES += \
+    ueventd-odm.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+
 
 # Keymint
 PRODUCT_PACKAGES += \
