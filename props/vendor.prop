@@ -62,6 +62,9 @@ vendor.audio_hal.period_size=192
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 
+# DRM
+drm.service.enabled=true
+
 # Adaptive Suspend
 suspend.short_suspend_threshold_millis=5000
 
@@ -109,7 +112,8 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
-camera.disable_zsl_mode=1
+camera.disable_zsl_mode=true
+ro.camera.enableCamera1MaxZsl=1
 
 # displayfeature
 persist.sys.sf.native_mode=256
@@ -117,13 +121,21 @@ persist.sys.sf.native_mode=256
 # Dolby Atmos
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
+ro.vendor.audio.dolby.dax.support=true
+ro.vendor.audio.dolby.surround.enable=true
+
+# Dolby Vision
+ro.vendor.audio.dolby.vision.support=true
+debug.config.media.video.dolby_vision_suports=true
 
 # DPM
-persist.vendor.dpm.vndr.feature=11
+persist.vendor.dpm.vndr.feature=1
 persist.vendor.dpm.vndr.halservice.enable=1
+persist.vendor.dpm.vndr.idletimer.mode=default
 
 # DRM
 drm.service.enabled=true
+vendor.wv.oemcrypto.debug.enable_hlos_data_path=true
 
 # FUSE
 persist.sys.fuse.passthrough.enable=true
@@ -132,6 +144,29 @@ persist.sys.fuse.passthrough.enable=true
 persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
+debug.sf.set_idle_timer_ms=1100
+persist.vendor.dc_backlight.enable=false
+ro.vendor.display.adaptive_hdr.enable=true
+ro.vendor.display.bl_lut_calib.enable=false
+ro.vendor.display.darkmode_dither.enable=true
+ro.vendor.display.dobly_dpu.enable=true
+ro.vendor.display.kernel_recoder_enable=false
+ro.vendor.display.mi_calib.enable=true
+ro.vendor.display.nature_mode.enable=false
+ro.vendor.display.standard_d75_enable=true
+ro.vendor.display.update_dbi_by_temperature=true
+ro.vendor.histogram.enable=true
+ro.vendor.localhbm.enable=true
+sys.displayfeature.entry.enable=true
+vendor.display.boost_cpu_layer_number_threshold=10
+vendor.display.disable_3d_adaptive_tm=1
+vendor.display.disable_cwb_idle_fallback=1
+vendor.display.disable_llcc_during_aod=1
+vendor.display.disable_stc_dimming=1
+vendor.display.idle_time=80
+vendor.display.multi_display_boost_cpu=1
+vendor.display.support_function_timer=0
+vendor.display.support_video_mode_30hz_aod=1
 debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough
 debug.egl.hw=0
 debug.renderengine.backend=skiavkthreaded
@@ -201,29 +236,6 @@ vendor.display.vds_allow_hwc=1
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
 ro.config.avoid_gfx_accel=true
-debug.sf.set_idle_timer_ms=1100
-persist.vendor.dc_backlight.enable=false
-ro.vendor.display.adaptive_hdr.enable=true
-ro.vendor.display.bl_lut_calib.enable=false
-ro.vendor.display.darkmode_dither.enable=true
-ro.vendor.display.dobly_dpu.enable=true
-ro.vendor.display.kernel_recoder_enable=false
-ro.vendor.display.mi_calib.enable=true
-ro.vendor.display.nature_mode.enable=false
-ro.vendor.display.standard_d75_enable=true
-ro.vendor.display.update_dbi_by_temperature=true
-ro.vendor.histogram.enable=true
-ro.vendor.localhbm.enable=true
-sys.displayfeature.entry.enable=true
-vendor.display.boost_cpu_layer_number_threshold=10
-vendor.display.disable_3d_adaptive_tm=1
-vendor.display.disable_cwb_idle_fallback=1
-vendor.display.disable_llcc_during_aod=1
-vendor.display.disable_stc_dimming=1
-vendor.display.idle_time=80
-vendor.display.multi_display_boost_cpu=1
-vendor.display.support_function_timer=0
-vendor.display.support_video_mode_30hz_aod=1
 
 # HWUI
 debug.hwui.use_hint_manager=true
@@ -233,17 +245,17 @@ debug.hwui.target_cpu_time_percent=30
 ro.incremental.enable=yes
 
 # Keymaster
-ro.crypto.metadata_init_delete_all_keys.enabled=false
+ro.crypto.metadata_init_delete_all_keys.enabled=true
 ro.hardware.keystore_desede=true
+vendor.gatekeeper.disable_spu=true
 vendor.gatekeeper.is_security_level_spu=0
 
 # Media
+ro.odm.build.media_performance_class=0
+ro.vendor.media_performance_class=0
 debug.stagefright.c2inputsurface=-1
 vendor.media.omx=0
 persist.mm.enable.prefetch=true
-
-# Radio
-ro.telephony.default_network=33,33
 
 # Power
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -252,12 +264,13 @@ ro.vendor.perf.scroll_opt=1
 
 # QCOM
 ro.soc.manufacturer=QTI
-ro.soc.model=SM4635
+ro.soc.model=SM8635
 
 # QCOMsysD
 persist.vendor.qcomsysd.enabled=1
 
 # Radio
+ro.telephony.default_network=33,32
 keyguard.no_require_sim=true
 persist.radio.multisim.config=dsds
 persist.vendor.radio.apm_sim_not_pwdn=1
@@ -265,22 +278,23 @@ persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.sib16_support=1
-persist.vendor.rcs.singlereg.feature=0
+persist.vendor.rcs.singlereg.feature=1
 ro.com.android.dataroaming=true
 ro.vendor.radio.build_profile=miui
 ro.vendor.radio.build_region=global
 
+# SSR
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
 # SKU
-ro.product.property_source_order=odm,vendor,product,system_ext,system
-import /odm/etc/odm_${ro.boot.hwc}.prop
-ro.boot.product.vendor.sku=pitti
+ro.boot.product.vendor.sku=cliffs
 
 # USB
 ro.recovery.usb.adb.pid=D001
 ro.recovery.usb.fastboot.pid=4EE0
 ro.recovery.usb.vid=18D1
 sys.usb.mtp.batchcancel=1
-vendor.usb.controller=4e00000.dwc3
+vendor.usb.controller=a600000.dwc3
 vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.qdss.inst.name=qdss_sw
@@ -299,7 +313,18 @@ persist.vendor.qti.telephony.vt_cam_interface=1
 ro.hardware.vibrator.playLengthMs=45
 
 # Volume
+ro.config.alarm_vol_steps=15
+ro.config.media_vol_default=10
+ro.config.media_vol_steps=15
+ro.config.system_vol_steps=15
 ro.config.vc_call_vol_steps=11
+
+# Sensors
+persist.vendor.sensor.mischeck=true
+persist.vendor.debug.collision.dfx=true
+
+# Thermal
+persist.vendor.tracking.dfs=true
 
 # WLAN
 wifi.aware.interface=wifi-aware0
