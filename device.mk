@@ -85,8 +85,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.pal@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_effects.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_policy_configuration.xml
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_effects.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
@@ -176,10 +176,10 @@ PRODUCT_PACKAGES += \
     init.qti.display_boot.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946383195604353.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946383195604353.xml \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946949772992129.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946949772992129.xml \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947205983955585.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947205983955585.xml \
-    $(LOCAL_PATH)/configs/displayconfig/display_id_4630947217459655297.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947217459655297.xml
+    $(LOCAL_PATH)/displayconfig/display_id_4630946383195604353.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946383195604353.xml \
+    $(LOCAL_PATH)/displayconfig/display_id_4630946949772992129.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946949772992129.xml \
+    $(LOCAL_PATH)/displayconfig/display_id_4630947205983955585.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947205983955585.xml \
+    $(LOCAL_PATH)/displayconfig/display_id_4630947217459655297.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947217459655297.xml
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -357,7 +357,7 @@ PRODUCT_PACKAGES += \
     android.hardware.media.bufferpool2-V1-ndk.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_profiles_pitti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_pitti.xml \
+    $(LOCAL_PATH)/media/media_profiles_pitti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_pitti.xml \
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -594,9 +594,9 @@ PRODUCT_PACKAGES += \
     firmware_WCNSS_qcom_cfg.ini_symlink
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/adrastea/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/adrastea/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
