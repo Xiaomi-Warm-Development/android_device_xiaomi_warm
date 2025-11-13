@@ -263,15 +263,13 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    init.fingerprint.rc \
     init.qcom.rc \
-    init.peridot.rc \
+    init.warm.rc \
     init.qti.kernel.rc \
     init.recovery.qcom.rc \
     init.target.rc
 
 PRODUCT_PACKAGES += \
-    ueventd-odm.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \

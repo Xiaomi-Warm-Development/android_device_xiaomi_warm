@@ -58,10 +58,15 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
+#Import rc file
+import /vendor/etc/ueventd.qcom.userdebug.rc
+
+
 # Firmware directory Path
 # Below macro will be read by uevent and path will
 # be added to search path for firmware loading
-firmware_directories /vendor/firmware_mnt/image/ /vendor/modem_firmware/image/
+firmware_directories /vendor/firmware_mnt/image/
 
 subsystem dma_heap
     devname uevent_devpath
@@ -72,6 +77,7 @@ subsystem mem_buf_vm
     dirname /dev/mem_buf_vm
 
 # the DIAG device node is not world writable/readable.
+/dev/diag                 0660   system     oem_2901
 /dev/mhi_*_pipe_4         0660   system     system
 
 /dev/genlock              0666   system     system
@@ -210,7 +216,13 @@ subsystem mem_buf_vm
 /dev/jpeg2                0660   system     camera
 /dev/jpeg3                0660   system     camera
 /dev/adsprpc-smd          0664   system     system
+/dev/fastrpc-adsp         0664   system     system
+/dev/fastrpc-cdsp         0664   system     system
+/dev/fastrpc-sdsp         0664   system     system
 /dev/adsprpc-smd-secure   0644   system     system
+/dev/fastrpc-adsp-secure  0644   system     system
+/dev/fastrpc-cdsp-secure  0644   system     system
+/dev/fastrpc-sdsp-secure  0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
 /dev/spec_sync            0660   system     system
@@ -401,9 +413,6 @@ subsystem mem_buf_vm
 # Ultrasound device
 /dev/usf1                 0660   system     system
 
-# xlog device
-/dev/xlog                 0660   system     audio
-
 # Ramdump devices
 /dev/ramdump*             0640   system     system
 
@@ -465,11 +474,15 @@ subsystem mem_buf_vm
 /sys/class/dual_role_usb/*	power_role	0660	system	system
 /sys/class/dual_role_usb/*	mode		0660	system	system
 
-/sys/class/typec/port0      power_role  0660    system  system
-/sys/class/typec/port0      data_role   0660    system  system
+/sys/class/typec/port0		data_role	0660	system	usb
+/sys/class/typec/port0		power_role	0660	system	usb
+/sys/class/typec/port0		port_type	0660	system	usb
+/sys/class/typec/port0-partner	accessory_mode	0440	system	usb
 
 # USB Dynamic Disable
 /sys/bus/platform/devices/a600000.ssusb	dynamic_disable	0220	root	usb
+/sys/bus/platform/drivers/msm-dwc3/4e00000.ssusb dynamic_disable  0220  root  usb
+/sys/devices/platform/soc/4e00000.ssusb dynamic_disable  0220  root  usb
 
 # USB autosuspend/wakeup settings
 /sys/bus/usb/devices/*      power/autosuspend          0660  system  usb
@@ -481,6 +494,7 @@ subsystem mem_buf_vm
 /sys/bus/usb/devices/usb*   authorized                 0660  system  usb
 
 #USB mode setting
+/sys/bus/platform/devices/a400000.ssusb    mode        0660  system  usb
 /sys/bus/platform/devices/a600000.ssusb    mode        0660  system  usb
 /sys/bus/platform/devices/4e00000.ssusb    mode        0660  system  usb
 
@@ -594,8 +608,3 @@ subsystem mem_buf_vm
 
 # Q2SPI UWB device
 /dev/q2spiuwb    0660    uwb    uwb
-
-# Battery
-/sys/class/qcom-battery                                 night_charging                  0660    system  system
-/sys/class/qcom-battery                                 sport_mode                      0660    system  system
-/sys/class/qcom-battery                                 input_suspend                   0660    system  system
