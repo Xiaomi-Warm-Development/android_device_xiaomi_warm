@@ -22,8 +22,8 @@ PRODUCT_MODEL := 24116PCC1I
 
 # Device Identifiers
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="warm_global-user 14 UKQ1.240624.001 OS2.0.202.0.VGVINXM release-keys" \
-    BuildFingerprint=POCO/warm_global/warm:14/UKQ1.240624.001/OS2.0.202.0.VGVINXM:user/release-keys \
+    BuildDesc="warm_global-user 15 AQ3A.241213.002 OS2.0.202.0.VGVINXM release-keys" \
+    BuildFingerprint=POCO/warm_global/warm:15/AQ3A.241213.002/OS2.0.202.0.VGVINXM:user/release-keys \
     DeviceName=warm
     DeviceProduct=warm_global \
     SystemName=warm_global \
