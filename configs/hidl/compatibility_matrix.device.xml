@@ -1,29 +1,4 @@
 <compatibility-matrix version="7.0" type="framework">
-    <hal format="aidl" optional="true">
-        <name>com.fingerprints.extension3</name>
-        <interface>
-            <name>IFingerprintNavigation</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IFingerprintSensorTest</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>com.fingerprints.fpc.extension</name>
-        <interface>
-            <name>IFpcExtension</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-         <name>vendor.dolby.dms</name>
-         <interface>
-             <name>IDms</name>
-             <instance>default</instance>
-         </interface>
-     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.dolby.hardware.dms</name>
         <version>2.0</version>
@@ -70,20 +45,6 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.fingerprintextension</name>
-        <interface>
-            <name>IXiaomiFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.fx.tunnel</name>
-        <interface>
-            <name>IMiFxTunnel</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>vendor.xiaomi.hardware.mlipay</name>
         <interface>
             <name>IMlipayService</name>
@@ -98,16 +59,9 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hw.touchfeature</name>
+        <name>vendor.xiaomi.hardware.fx.tunnel</name>
         <interface>
-            <name>ITouchFeature</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.sensor.camera</name>
-        <interface>
-            <name>IMiCam</name>
+            <name>IMiFxTunnel</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -115,6 +69,13 @@
         <name>vendor.xiaomi.sensor.citsensorservice</name>
         <interface>
             <name>ICitSensorService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.display.mihwcextension</name>
+        <interface>
+            <name>IMiHwcExtension</name>
             <instance>default</instance>
         </interface>
     </hal>
