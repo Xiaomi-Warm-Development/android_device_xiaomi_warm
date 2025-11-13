@@ -6,8 +6,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_warm.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_warm-eng \
-    lineage_warm-userdebug \
-    lineage_warm-user
