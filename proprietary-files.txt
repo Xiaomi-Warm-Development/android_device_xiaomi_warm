@@ -1916,6 +1916,9 @@ vendor/lib64/libqcodec2_v4l2codec.so
 vendor/lib64/libvideotxr.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
 
+# Media Bin
+vendor/bin/init.qti.media.sh
+
 # Media Config
 vendor/etc/media_cliffs_v0/video_system_specs.json
 vendor/etc/media_codecs.xml
