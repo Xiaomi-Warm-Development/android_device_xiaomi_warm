@@ -1,1 +1,1 @@
-require board=pitti|warm
+require board=pineapple|warm
