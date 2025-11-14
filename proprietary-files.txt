@@ -518,9 +518,11 @@ vendor/etc/camera/xiaomi/thirdpartysnapshot.json
 vendor/etc/camera/xiaomi/uwsuperlowlightshot.json
 vendor/etc/camera/xiaomiSceneDetection.xml
 vendor/lib64/libTrueSight.so
+vendor/lib64/libofflinelog.so
 vendor/lib64/libanc_single_bokeh.so
 vendor/lib64/libanc_single_rt_bokeh.so
 vendor/lib64/libcamera_scene.so
+vendor/lib64/libmorpho_ImageRefiner.so
 vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmialgo_utils.so
 vendor/etc/camera/102_SummerDay.png
@@ -658,7 +660,7 @@ vendor/lib64/libstreamparser.so
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvideoutils.so
 vendor/lib64/libsynx.so
-vendor/lib64/libmemunreachable.so
+#vendor/lib64/libmemunreachable.so
 vendor/lib64/liboemaids_vendor.so
 system_ext/lib64/vendor.xiaomi.hardware.quickcamera-V1-ndk.so
 
@@ -843,9 +845,9 @@ vendor/lib64/libqdcm-algo.so
 vendor/lib64/libqdcm-json-mode-parser.so
 vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdutils.so
-vendor/lib64/vendor.qti.hardware.display.allocator@1.0.so
-vendor/lib64/vendor.qti.hardware.display.allocator@3.0.so
-vendor/lib64/vendor.qti.hardware.display.allocator@4.0.so
+vendor/lib64/vendor.qti.hardware.display.allocator@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.hardware.display.allocator@3.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.hardware.display.allocator@4.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Display SDM
@@ -955,7 +957,7 @@ vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libqservice.so
 system_ext/lib64/vendor.xiaomi.hardware.display.mihwcextension-V1-ndk.so
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
 
 # GNSS
@@ -1102,7 +1104,7 @@ vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti-rkp.xml
 vendor/etc/vintf/manifest/manifest_identity_credential.xml
 vendor/lib64/libqtiidentitycredential.so
-vendor/lib64/libkeymaster_messages.so
+#vendor/lib64/libkeymaster_messages.so
 vendor/lib64/libqtikeymint.so
 
 # Listen
@@ -1129,7 +1131,7 @@ vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libmediautils_vendor.so
+#vendor/lib64/libmediautils_vendor.so
 vendor/lib64/libcodec2_hidl_plugin.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
@@ -1676,7 +1678,6 @@ vendor/lib64/vendor.qti.hardware.qconfig-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 system_ext/lib64/vendor.qti.hardware.qconfig-V3-ndk.so
-
 
 # WiFi
 vendor/bin/cnss-daemon
