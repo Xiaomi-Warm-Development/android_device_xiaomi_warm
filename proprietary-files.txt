@@ -263,6 +263,54 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile7.xml
 vendor/etc/cne/mwqem.conf
 vendor/etc/cne/profileMwqem.xml
 
+# ODM Firmware
+odm/firmware/Conf_MultipleTest.ini
+odm/firmware/focaltech_ts_fw_hkc.bin
+odm/firmware/novatek_ts_fw_boe.bin
+odm/firmware/novatek_ts_fw_txd.bin
+odm/firmware/novatek_ts_fw_xinli.bin
+odm/firmware/novatek_ts_mp_boe.bin
+odm/firmware/novatek_ts_mp_txd.bin
+odm/firmware/novatek_ts_mp_xinli.bin
+
+# Vendor Firmware
+vendor/firmware/a610_zap.b00
+vendor/firmware/a610_zap.b01
+vendor/firmware/a610_zap.b02
+vendor/firmware/a610_zap.mbn
+vendor/firmware/a610_zap.mdt
+vendor/firmware/a630_sqe.fw
+vendor/firmware/gen70900_aqe.fw
+vendor/firmware/gen70900_sqe.fw
+vendor/firmware/gen70900_zap.mbn
+vendor/firmware/gen71100_gmu.bin
+vendor/firmware/gen71100_sqe.fw
+vendor/firmware/gen71100_zap.mbn
+vendor/firmware/gmu_gen70900.bin
+vendor/firmware/sipa.bin
+vendor/firmware/venus.mbn
+vendor/firmware/venus_4mb.mbn
+vendor/firmware/venus_4mb_ecdsa.mbn
+vendor/firmware/venus_4mb_unsigned.mbn
+vendor/firmware/venus_4mb_v6.mbn
+vendor/firmware/venus_4mb_v6_rsa.mbn
+vendor/firmware/venus_4mb_v7.mbn
+vendor/firmware/venus_5mb.mbn
+vendor/firmware/venus_5mb_ecdsa.mbn
+vendor/firmware/venus_5mb_unsigned.mbn
+vendor/firmware/venus_5mb_v6.mbn
+vendor/firmware/venus_5mb_v6_rsa.mbn
+vendor/firmware/venus_5mb_v7.mbn
+vendor/firmware/venus_ecdsa.mbn
+vendor/firmware/venus_unsigned.mbn
+vendor/firmware/venus_v6.mbn
+vendor/firmware/venus_v6_rsa.mbn
+vendor/firmware/venus_v7.mbn
+vendor/firmware/vpu20_1v.mbn
+vendor/firmware/vpu20_1v_unsigned.mbn
+vendor/firmware/vpu20_4v.mbn
+vendor/firmware/vpu20_4v_unsigned.mbn
+
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider-service_64
 vendor/etc/camera/beauty_config_cn.json
