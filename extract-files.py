@@ -29,6 +29,7 @@ namespace_imports = [
     'vendor/xiaomi/warm',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/opensource/commonsys-intf/display',
+    'vendor/qcom/opensource/audio-hal/st-hal-ar-legacy',
     'vendor/qcom/opensource/commonsys/display',
 ]
 
