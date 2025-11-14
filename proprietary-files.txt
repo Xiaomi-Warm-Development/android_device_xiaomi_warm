@@ -808,7 +808,7 @@ system_ext/lib64/vendor.qti.diaghal@1.0.so
 vendor/bin/diag-router
 vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib64/libdiagjni.so
-vendor/lib64/vendor.qti.diaghal@1.0.so
+vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
 # Display HDR
 vendor/lib64/libhdr_stub.so
@@ -1236,9 +1236,6 @@ vendor/lib64/libprotobuf-cpp-lite-21.7.so
 -system_ext/app/QesdkSysService/QesdkSysService.apk
 system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml
 system_ext/lib64/libqesdk_ndk_platform.qti.so
-system_ext/lib64/vendor.qti.qesdhal@1.0.so
-system_ext/lib64/vendor.qti.qesdhal@1.1.so
-system_ext/lib64/vendor.qti.qesdhal@1.2.so
 system_ext/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
 vendor/lib64/libqesdk2_0.so
 vendor/lib64/libqesdk_manager.so
@@ -1312,7 +1309,7 @@ vendor/lib64/vendor.qti.qspmhal@1.0.so
 vendor/lib64/libpolygon.so
 
 # RIL - from op5cfbl1 qssi-user-14-UKQ1.231108.001-1717690720477-release-keys
- vendor/lib64/libqcrilNrVoiceModule.so|c1ec01ba7707a718d352ca6cbf8a8d586b1d8e9e
+ vendor/lib64/libqcrilNrVoiceModule.so
 
 # RIL
 odm/etc/me_config.xml
@@ -1531,7 +1528,7 @@ vendor/lib64/qcrild_libqcrilnrutils.so
 vendor/lib64/qtiPeripheralMgr.so
 vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
-vendor/lib64/vendor.qti.ImsRtpService-V1-ndk.so
+vendor/lib64/vendor.qti.ImsRtpService-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.ImsRtpService-aidl-Impl.so
 vendor/lib64/vendor.qti.data.mwqem@1.0.so
 vendor/lib64/vendor.qti.data.mwqemaidlservice-V1-ndk.so
@@ -1596,8 +1593,8 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so
-vendor/lib64/vendor.qti.imsrtpservice@3.1.so
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.imsrtpservice@3.1.so;MODULE_SUFFIX=_vendor
 
 # SMC Invoke
 vendor/etc/ssg/ta_config.json
@@ -1754,5 +1751,5 @@ vendor/lib64/libwfduibcsrc_vendor.so
 vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
