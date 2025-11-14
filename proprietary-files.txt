@@ -623,11 +623,15 @@ vendor/lib64/libcalculator.so
 vendor/lib64/libcalculator_htp.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libcamxexternalformatutils.so
+vendor/lib64/libcamxfacialfeatures.so
+vendor/lib64/libcamxfdalgo.so
 vendor/lib64/libcamxfdengine.so
+vendor/lib64/libtflite_fd.so
 vendor/lib64/libcamxifestriping.so
 vendor/lib64/libcamximageformatutils.so
 vendor/lib64/libcamxqsatalgo.so
 vendor/lib64/libcamxstatscore.so
+vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamxswispiqmodule.so
 vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
