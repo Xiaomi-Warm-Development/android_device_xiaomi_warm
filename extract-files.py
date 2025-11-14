@@ -25,6 +25,7 @@ namespace_imports = [
     'device/xiaomi/warm',
     'hardware/qcom-caf/sm8650',
     'hardware/xiaomi',
+    'hardware/qcom-caf/wlan',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/commonsys/display',
 ]
