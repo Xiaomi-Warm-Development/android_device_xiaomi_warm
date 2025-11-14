@@ -522,7 +522,6 @@ vendor/lib64/libofflinelog.so
 vendor/lib64/libanc_single_bokeh.so
 vendor/lib64/libanc_single_rt_bokeh.so
 vendor/lib64/libcamera_scene.so
-vendor/lib64/libmorpho_ImageRefiner.so
 vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmialgo_utils.so
 vendor/etc/camera/102_SummerDay.png
