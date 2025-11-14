@@ -722,6 +722,9 @@ vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib64/camera/components/libdepthmapwrapper_secure.so
 
 # Camera sensors
+vendor/lib64/libsensorslog.so
+vendor/lib64/libsnsutils.so
+vendor/lib64/libsnsapi.so
 vendor/lib64/camera/com.qti.sensor.c3f2_king_hi556w_front_ii.so
 vendor/lib64/camera/com.qti.sensor.c3f2_shine_imx852_main_ii.so
 vendor/lib64/camera/com.qti.sensor.c3f2_truly_s5kjns_main_i.so
@@ -1682,6 +1685,8 @@ system_ext/lib64/vendor.qti.hardware.qconfig-V3-ndk.so
 # WiFi
 vendor/bin/cnss-daemon
 vendor/etc/init/init.vendor.wlan.rc
+vendor/lib64/libcld80211.so
+vendor/lib64/libmorpho_ImageRefiner.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 
 # WiFi Display
